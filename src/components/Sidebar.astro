@@ -1,0 +1,31 @@
+---
+const categories = [
+  { name: "Indoor Light", slug: "indoor-light" },
+  { name: "Outdoor Light", slug: "outdoor-light" },
+  { name: "LED Strip Light", slug: "led-strip-light" },
+  { name: "Solar LED Light", slug: "solar-led-light" },
+  { name: "Accessories", slug: "accessories" }
+];
+---
+
+<aside class="w-64 bg-white border border-gray-200 shadow-sm self-start hidden md:block">
+  <div class="bg-blue-800 text-white font-bold p-4 uppercase text-sm tracking-wide">
+    Products List
+  </div>
+  <ul class="flex flex-col text-sm font-semibold text-gray-700">
+    {categories.map(cat => (
+      <li class="border-b border-gray-100">
+        <a href={`/products/${cat.slug}`} class="block px-4 py-3 hover:bg-blue-50 hover:text-blue-800 transition-colors">
+          {cat.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+  
+  <div class="p-4 bg-gray-50 border-t border-gray-200 text-xs text-gray-600 space-y-2">
+    <h4 class="font-bold text-gray-800 uppercase border-b pb-1">Direct Inquiries</h4>
+    <p><strong>Tel/WhatsApp:</strong> +260 XX XXX XXXX</p>
+    <p><strong>Email:</strong> sales@bestbuylighting.co.zm</p>
+    <p><strong>Support:</strong> 24/7 B2B Service</p>
+  </div>
+</aside>
