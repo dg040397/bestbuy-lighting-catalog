@@ -4,7 +4,7 @@
     "sku": "BBL-PEND-01",
     "title": "Modern Matte Black LED Pendant",
     "category": "Indoor",
-    "image": "https://via.placeholder.com/400x400.png?text=LED+Pendant",
+    "image": "https://placehold.co/400x400/eeeeee/333333?text=LED+Pendant",
     "specs": {
       "wattage": "40W",
       "lumens": "3200lm",
@@ -17,7 +17,7 @@
     "sku": "BBL-DOWN-04",
     "title": "Commercial LED Recessed Downlights (4-Pack)",
     "category": "Commercial",
-    "image": "https://via.placeholder.com/400x400.png?text=Downlights",
+    "image": "https://placehold.co/400x400/eeeeee/333333?text=Downlights",
     "specs": {
       "wattage": "15W",
       "lumens": "1200lm",
@@ -30,7 +30,7 @@
     "sku": "BBL-FL-100",
     "title": "100W Outdoor Security Flood Light",
     "category": "Outdoor",
-    "image": "https://via.placeholder.com/400x400.png?text=Flood+Light",
+    "image": "https://placehold.co/400x400/eeeeee/333333?text=Flood+Light",
     "specs": {
       "wattage": "100W",
       "lumens": "10,000lm",
