@@ -1,0 +1,37 @@
+---
+import Navbar from '../components/Navbar.astro';
+const { title } = Astro.props;
+
+const categories = [
+  "Indoor Light", "Outdoor Light", "LED Strip Light", "Solar LED Light", "Accessories"
+];
+---
+<html lang="en">
+  <head>
+    <title>{title}</title>
+    <script is:inline src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50">
+    <Navbar />
+    <div class="max-w-7xl mx-auto px-4 py-8 flex gap-8">
+      <!-- Sidebar -->
+      <aside class="w-64 bg-white border border-gray-200 shadow-sm self-start hidden md:block">
+        <div class="bg-blue-800 text-white font-bold p-4 uppercase text-sm">Products List</div>
+        <ul class="flex flex-col">
+          {categories.map(cat => (
+            <li class="border-b border-gray-100">
+              <a href={`/products/${cat.toLowerCase().replace(/ /g, '-')}`} class="block p-4 text-sm font-bold text-gray-700 hover:text-blue-600 hover:bg-gray-50">
+                {cat}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </aside>
+      
+      <!-- Main Content Grid -->
+      <main class="flex-1">
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>

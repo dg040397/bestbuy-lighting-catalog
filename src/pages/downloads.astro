@@ -1,0 +1,38 @@
+---
+import Navbar from '../components/Navbar.astro';
+import data from '../data/database.json';
+---
+<html lang="en">
+  <head>
+    <title>Downloads & Catalogs | BestBuy Lighting</title>
+    <script is:inline src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <Navbar />
+    <div class="max-w-5xl mx-auto py-12 px-6">
+      <h1 class="text-2xl font-bold mb-8">Download Center</h1>
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-gray-100 text-gray-700 text-sm uppercase">
+            <th class="p-4 border-b">File Name</th>
+            <th class="p-4 border-b">Category</th>
+            <th class="p-4 border-b">Size</th>
+            <th class="p-4 border-b text-right">Action</th>
+          </tr>
+        </thead>
+        <tbody class="text-sm text-gray-600">
+          {data.downloads.map(doc => (
+            <tr class="hover:bg-gray-50">
+              <td class="p-4 border-b font-medium text-gray-800">{doc.title}</td>
+              <td class="p-4 border-b">{doc.type}</td>
+              <td class="p-4 border-b">{doc.fileSize}</td>
+              <td class="p-4 border-b text-right">
+                <a href={doc.link} class="text-blue-600 font-bold hover:underline">Download ↓</a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

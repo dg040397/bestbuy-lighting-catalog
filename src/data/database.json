@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "sku": "BBL-RDL4C",
+      "title": "COB Home Hotel Ceiling Recessed LED Spotlight Downlight",
+      "category": "Indoor Light",
+      "image": "https://placehold.co/400x400/eeeeee/333333?text=Recessed+Downlight",
+      "specs": { "power": "7W-27W", "ip_rating": "IP44" }
+    },
+    {
+      "sku": "BBL-FL100",
+      "title": "IP65 Aluminum Outdoor LED Flood Light",
+      "category": "Outdoor Light",
+      "image": "https://placehold.co/400x400/eeeeee/333333?text=Flood+Light",
+      "specs": { "power": "100W", "ip_rating": "IP65" }
+    }
+  ],
+  "projects": [
+    {
+      "title": "Commercial Office Building Lighting",
+      "location": "Lusaka, Zambia",
+      "image": "https://placehold.co/600x400/eeeeee/333333?text=Office+Project"
+    },
+    {
+      "title": "Exterior Facade & Garden Project",
+      "location": "Ndola, Zambia",
+      "image": "https://placehold.co/600x400/eeeeee/333333?text=Garden+Project"
+    }
+  ],
+  "downloads": [
+    {
+      "title": "2026 Commercial Lighting Catalog",
+      "type": "Catalog",
+      "fileSize": "14.2 MB",
+      "link": "/assets/2026-catalog.pdf"
+    },
+    {
+      "title": "BBL-FL100 IES Parameter Data",
+      "type": "Parameter Data",
+      "fileSize": "1.1 MB",
+      "link": "/assets/BBL-FL100.ies"
+    }
+  ]
+}

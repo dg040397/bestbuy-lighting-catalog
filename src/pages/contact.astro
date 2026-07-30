@@ -1,0 +1,38 @@
+---
+import Navbar from '../components/Navbar.astro';
+---
+<html lang="en">
+  <head>
+    <title>Contact Us | BestBuy Lighting</title>
+    <script is:inline src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <Navbar />
+    <div class="max-w-4xl mx-auto py-12 px-6 grid grid-cols-2 gap-12">
+      <!-- Contact Info (Matches MDL layout) -->
+      <div>
+        <h1 class="text-3xl font-bold mb-6">Contact Us</h1>
+        <div class="space-y-4 text-gray-600 text-sm">
+          <p><strong class="text-gray-900 block text-lg mb-2">BestBuy Lighting Ltd</strong></p>
+          <p><strong>Tel:</strong> +260 XX XXX XXXX</p>
+          <p><strong>Email:</strong> sales@bestbuylighting.co.zm</p>
+          <p><strong>Add:</strong> [Client's Full Address in Zambia]</p>
+          
+          <div class="mt-8 pt-6 border-t border-gray-200">
+            <p><strong>Sales Director</strong></p>
+            <p>Mob/WhatsApp: +260 XX XXX XXXX</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Simple Netlify Form -->
+      <form class="bg-gray-50 p-6 border border-gray-200" name="contact" method="POST" data-netlify="true">
+        <h3 class="font-bold text-lg mb-4 text-gray-800">I'd Like to Hear from You</h3>
+        <input type="text" name="name" placeholder="Your Name" class="w-full mb-4 p-2 border" required />
+        <input type="email" name="email" placeholder="Your Email" class="w-full mb-4 p-2 border" required />
+        <textarea name="message" rows="4" placeholder="Your Requirements / SKU Numbers" class="w-full mb-4 p-2 border" required></textarea>
+        <button type="submit" class="bg-blue-800 text-white px-6 py-2 w-full font-bold hover:bg-blue-700">Submit Inquiry</button>
+      </form>
+    </div>
+  </body>
+</html>

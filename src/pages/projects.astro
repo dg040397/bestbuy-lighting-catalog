@@ -1,0 +1,27 @@
+---
+import Navbar from '../components/Navbar.astro';
+import data from '../data/database.json';
+---
+<html lang="en">
+  <head>
+    <title>Application Projects | BestBuy Lighting</title>
+    <script is:inline src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <Navbar />
+    <div class="max-w-7xl mx-auto py-12 px-6">
+      <h1 class="text-3xl font-bold mb-8 text-center">Engineering Projects & Case Studies</h1>
+      <div class="grid grid-cols-2 gap-8">
+        {data.projects.map(project => (
+          <div class="relative group overflow-hidden bg-black">
+            <img src={project.image} class="w-full h-64 object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
+            <div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/80 to-transparent w-full">
+              <h3 class="text-white font-bold text-xl">{project.title}</h3>
+              <p class="text-gray-300 text-sm">{project.location}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </body>
+</html>

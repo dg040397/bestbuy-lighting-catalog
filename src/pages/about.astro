@@ -1,0 +1,25 @@
+---
+import Navbar from '../components/Navbar.astro';
+---
+<html lang="en">
+  <head>
+    <title>About Us | BestBuy Lighting</title>
+    <script is:inline src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <Navbar />
+    <div class="max-w-4xl mx-auto py-12 px-6">
+      <h1 class="text-3xl font-bold mb-6 border-l-4 border-blue-800 pl-4">Company Profile</h1>
+      <p class="text-gray-600 leading-relaxed mb-6">
+        BestBuy Lighting Ltd is a professional high-tech enterprise specializing in LED lighting R&D, manufacturing, and sales. We are committed to providing high-quality, energy-saving indoor and outdoor luminaires for global commercial and industrial applications.
+      </p>
+      <h2 class="text-xl font-bold mb-4 mt-8">Certificates & Compliance</h2>
+      <div class="grid grid-cols-4 gap-4">
+        <div class="bg-gray-100 p-4 text-center font-bold text-gray-700">ISO 9001</div>
+        <div class="bg-gray-100 p-4 text-center font-bold text-gray-700">CE</div>
+        <div class="bg-gray-100 p-4 text-center font-bold text-gray-700">RoHS</div>
+        <div class="bg-gray-100 p-4 text-center font-bold text-gray-700">IP65/IP66</div>
+      </div>
+    </div>
+  </body>
+</html>
