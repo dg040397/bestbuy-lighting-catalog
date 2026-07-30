@@ -2,40 +2,85 @@
   {
     "id": "1",
     "sku": "BBL-PEND-01",
-    "title": "Modern Matte Black LED Pendant",
+    "title": "Modern Matte Black Architectural LED Pendant",
     "category": "Indoor",
-    "image": "https://placehold.co/400x400/eeeeee/333333?text=LED+Pendant",
+    "image": "https://placehold.co/600x400/1e293b/ffffff?text=Modern+LED+Pendant",
     "specs": {
       "wattage": "40W",
-      "lumens": "3200lm",
-      "color_temp": "3000K",
-      "dimmable": "Yes"
+      "lumens": "3,200 lm",
+      "color_temp": "3000K Warm White",
+      "ip_rating": "IP20",
+      "dimmable": "0-10V Dimmable"
     }
   },
   {
     "id": "2",
     "sku": "BBL-DOWN-04",
-    "title": "Commercial LED Recessed Downlights (4-Pack)",
+    "title": "High-Efficiency Commercial LED Recessed Downlight",
     "category": "Commercial",
-    "image": "https://placehold.co/400x400/eeeeee/333333?text=Downlights",
+    "image": "https://placehold.co/600x400/1e293b/ffffff?text=Commercial+Downlight",
     "specs": {
       "wattage": "15W",
-      "lumens": "1200lm",
-      "color_temp": "Selectable (3K/4K/5K)",
-      "dimmable": "Yes"
+      "lumens": "1,350 lm",
+      "color_temp": "CCT Selectable (3K/4K/5K)",
+      "ip_rating": "IP44 Damp Rated",
+      "dimmable": "Triac Dimmable"
     }
   },
   {
     "id": "3",
     "sku": "BBL-FL-100",
-    "title": "100W Outdoor Security Flood Light",
+    "title": "100W Heavy-Duty Industrial Flood Light",
     "category": "Outdoor",
-    "image": "https://placehold.co/400x400/eeeeee/333333?text=Flood+Light",
+    "image": "https://placehold.co/600x400/1e293b/ffffff?text=100W+Flood+Light",
     "specs": {
       "wattage": "100W",
-      "lumens": "10,000lm",
-      "color_temp": "5000K",
-      "ip_rating": "IP65"
+      "lumens": "13,000 lm",
+      "color_temp": "5000K Daylight",
+      "ip_rating": "IP66 Waterproof",
+      "dimmable": "Non-Dimmable"
+    }
+  },
+  {
+    "id": "4",
+    "sku": "BBL-SLR-60",
+    "title": "All-In-One Solar Street Light with Motion Sensor",
+    "category": "Solar",
+    "image": "https://placehold.co/600x400/1e293b/ffffff?text=Solar+Street+Light",
+    "specs": {
+      "wattage": "60W Equivalent",
+      "lumens": "6,000 lm",
+      "battery": "LiFePO4 3.2V 30Ah",
+      "ip_rating": "IP65 Weatherproof",
+      "sensor": "PIR Motion Detection"
+    }
+  },
+  {
+    "id": "5",
+    "sku": "BBL-PANEL-6060",
+    "title": "Ultra-Slim 60x60 Office LED Ceiling Panel",
+    "category": "Commercial",
+    "image": "https://placehold.co/600x400/1e293b/ffffff?text=60x60+LED+Panel",
+    "specs": {
+      "wattage": "36W",
+      "lumens": "3,960 lm",
+      "color_temp": "4000K Neutral White",
+      "ip_rating": "IP40",
+      "dimmable": "Optional DALI / 0-10V"
+    }
+  },
+  {
+    "id": "6",
+    "sku": "BBL-WALL-VINT",
+    "title": "Industrial Brass Exterior Wall Sconce",
+    "category": "Outdoor",
+    "image": "https://placehold.co/600x400/1e293b/ffffff?text=Brass+Wall+Sconce",
+    "specs": {
+      "wattage": "E27 Max 60W",
+      "lumens": "Bulb Dependent",
+      "color_temp": "2700K Vintage Warm",
+      "ip_rating": "IP54 Outdoor Rated",
+      "material": "Die-cast Aluminum & Glass"
     }
   }
 ]
