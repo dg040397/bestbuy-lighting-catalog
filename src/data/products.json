@@ -1,0 +1,41 @@
+[
+  {
+    "id": "1",
+    "sku": "BBL-PEND-01",
+    "title": "Modern Matte Black LED Pendant",
+    "category": "Indoor",
+    "image": "https://via.placeholder.com/400x400.png?text=LED+Pendant",
+    "specs": {
+      "wattage": "40W",
+      "lumens": "3200lm",
+      "color_temp": "3000K",
+      "dimmable": "Yes"
+    }
+  },
+  {
+    "id": "2",
+    "sku": "BBL-DOWN-04",
+    "title": "Commercial LED Recessed Downlights (4-Pack)",
+    "category": "Commercial",
+    "image": "https://via.placeholder.com/400x400.png?text=Downlights",
+    "specs": {
+      "wattage": "15W",
+      "lumens": "1200lm",
+      "color_temp": "Selectable (3K/4K/5K)",
+      "dimmable": "Yes"
+    }
+  },
+  {
+    "id": "3",
+    "sku": "BBL-FL-100",
+    "title": "100W Outdoor Security Flood Light",
+    "category": "Outdoor",
+    "image": "https://via.placeholder.com/400x400.png?text=Flood+Light",
+    "specs": {
+      "wattage": "100W",
+      "lumens": "10,000lm",
+      "color_temp": "5000K",
+      "ip_rating": "IP65"
+    }
+  }
+]
