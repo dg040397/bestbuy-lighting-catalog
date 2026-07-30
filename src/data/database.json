@@ -1,44 +1,94 @@
 {
   "products": [
     {
-      "sku": "BBL-RDL4C",
-      "title": "COB Home Hotel Ceiling Recessed LED Spotlight Downlight",
-      "category": "Indoor Light",
-      "image": "https://placehold.co/400x400/eeeeee/333333?text=Recessed+Downlight",
-      "specs": { "power": "7W-27W", "ip_rating": "IP44" }
-    },
-    {
-      "sku": "BBL-FL100",
-      "title": "IP65 Aluminum Outdoor LED Flood Light",
+      "sku": "MDL-FL-A100",
+      "title": "IP66 Die-cast Aluminum Outdoor LED Flood Light for Stadium",
       "category": "Outdoor Light",
+      "sub_category": "LED Flood Light",
       "image": "https://placehold.co/400x400/eeeeee/333333?text=Flood+Light",
-      "specs": { "power": "100W", "ip_rating": "IP65" }
-    }
-  ],
-  "projects": [
-    {
-      "title": "Commercial Office Building Lighting",
-      "location": "Lusaka, Zambia",
-      "image": "https://placehold.co/600x400/eeeeee/333333?text=Office+Project"
+      "specs": { "power": "100W/150W/200W", "voltage": "AC85-265V", "ip_rating": "IP66", "luminous_efficacy": "130lm/W", "material": "Die-cast Aluminum" }
     },
     {
-      "title": "Exterior Facade & Garden Project",
-      "location": "Ndola, Zambia",
-      "image": "https://placehold.co/600x400/eeeeee/333333?text=Garden+Project"
-    }
-  ],
-  "downloads": [
-    {
-      "title": "2026 Commercial Lighting Catalog",
-      "type": "Catalog",
-      "fileSize": "14.2 MB",
-      "link": "/assets/2026-catalog.pdf"
+      "sku": "MDL-ST-V50",
+      "title": "High Power LED Street Light SMD3030 Road Lighting",
+      "category": "Outdoor Light",
+      "sub_category": "LED Street Light",
+      "image": "https://placehold.co/400x400/eeeeee/333333?text=Street+Light",
+      "specs": { "power": "50W/100W/150W", "beam_angle": "Type II / III", "ip_rating": "IP65", "cri": ">80" }
     },
     {
-      "title": "BBL-FL100 IES Parameter Data",
-      "type": "Parameter Data",
-      "fileSize": "1.1 MB",
-      "link": "/assets/BBL-FL100.ies"
+      "sku": "MDL-UW-9W",
+      "title": "IP68 Stainless Steel LED Underwater Swimming Pool Light",
+      "category": "Outdoor Light",
+      "sub_category": "LED Underwater Light",
+      "image": "https://placehold.co/400x400/eeeeee/333333?text=Underwater+Light",
+      "specs": { "power": "9W/12W/18W", "voltage": "DC12V/24V", "ip_rating": "IP68", "color": "RGB / Single Color" }
+    },
+    {
+      "sku": "MDL-RDL-C15",
+      "title": "COB Recessed Ceiling Downlight Anti-glare Hotel Spot Light",
+      "category": "Indoor Light",
+      "sub_category": "LED Downlight",
+      "image": "https://placehold.co/400x400/eeeeee/333333?text=Downlight",
+      "specs": { "power": "7W/12W/15W/20W", "cut_out": "75mm - 120mm", "beam_angle": "15°/24°/36°", "cri": ">90" }
+    },
+    {
+      "sku": "MDL-TL-M30",
+      "title": "Magnetic Track Light System 48V Commercial Showcase Lighting",
+      "category": "Indoor Light",
+      "sub_category": "LED Track Light",
+      "image": "https://placehold.co/400x400/eeeeee/333333?text=Track+Light",
+      "specs": { "power": "10W/20W/30W", "voltage": "DC48V", "installation": "Magnetic Track", "dimming": "DALI / 0-10V" }
+    },
+    {
+      "sku": "MDL-PL-6060",
+      "title": "Ultra Thin 600x600 Edge-lit LED Panel Light Office Troffer",
+      "category": "Indoor Light",
+      "sub_category": "LED Panel Light",
+      "image": "https://placehold.co/400x400/eeeeee/333333?text=Panel+Light",
+      "specs": { "power": "36W/40W/48W", "size": "600x600mm", "ugr": "<19", "lifespan": "50,000 Hrs" }
+    },
+    {
+      "sku": "MDL-NS-24V",
+      "title": "Flexible Silicone LED Neon Rope Light IP67 Waterproof",
+      "category": "LED Strip Light",
+      "sub_category": "Silicone LED Neon",
+      "image": "https://placehold.co/400x400/eeeeee/333333?text=Neon+Strip",
+      "specs": { "voltage": "DC12V/24V", "led_qty": "120leds/m", "ip_rating": "IP67", "cutting_unit": "5cm" }
+    },
+    {
+      "sku": "MDL-ST-SMD",
+      "title": "High Density COB LED Strip Light 480LEDs/m Dotless",
+      "category": "LED Strip Light",
+      "sub_category": "COB LED Strip",
+      "image": "https://placehold.co/400x400/eeeeee/333333?text=COB+Strip",
+      "specs": { "voltage": "DC24V", "led_qty": "480leds/m", "pcb_width": "8mm/10mm", "cri": ">90" }
+    },
+    {
+      "sku": "MDL-SL-I100",
+      "title": "All-in-one Integrated Solar Street Light with Motion Sensor",
+      "category": "Solar LED Light",
+      "sub_category": "Solar Street Light",
+      "image": "https://placehold.co/400x400/eeeeee/333333?text=Solar+Street+Light",
+      "specs": { "power": "100W/200W", "battery": "LiFePO4 3.2V", "solar_panel": "Monocrystalline", "working_time": "10-12 Hours" }
+    },
+    {
+      "sku": "MDL-WL-UD05",
+      "title": "Up and Down Outdoor Wall Light IP65 Aluminum Sconce",
+      "category": "LED Wall Light",
+      "sub_category": "Decoration Wall Light",
+      "image": "https://placehold.co/400x400/eeeeee/333333?text=Wall+Light",
+      "specs": { "power": "2x5W", "ip_rating": "IP65", "color_temp": "3000K Warm White", "material": "Die-cast Aluminum" }
+    },
+    {
+      "sku": "MDL-HB-UFO",
+      "title": "UFO LED High Bay Light 150LM/W Warehouse Industrial Lighting",
+      "category": "Commercial Light",
+      "sub_category": "LED High Bay Light",
+      "image": "https://placehold.co/400x400/eeeeee/333333?text=High+Bay",
+      "specs": { "power": "100W/150W/200W", "luminous_efficacy": "150lm/W", "driver": "Meanwell / Sosen", "warranty": "5 Years" }
     }
-  ]
+  ],
+  "projects": [],
+  "downloads": []
 }
