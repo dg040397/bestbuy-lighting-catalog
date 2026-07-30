@@ -1,0 +1,228 @@
+---
+import CatalogLayout from '../../../layouts/CatalogLayout.astro';
+import data from '../../../data/database.json';
+
+// Generate static routes for every SKU in database.json
+export async function getStaticPaths() {
+  return data.products.map((product) => {
+    // Sanitize SKU to create a clean, web-safe URL parameter
+    const sanitizedSku = product.sku.toLowerCase().replace(/[^a-z0-9-]/g, '-');
+    return {
+      params: { sku: sanitizedSku },
+      props: { product },
+    };
+  });
+}
+
+const { product } = Astro.props;
+
+// Filter 3 related products from the same category
+const relatedProducts = data.products
+  .filter((item) => item.category === product.category && item.sku !== product.sku)
+  .slice(0, 3);
+---
+
+<CatalogLayout title={`${product.title} (${product.sku}) | BestBuy Lighting Ltd`}>
+  <!-- Breadcrumb Navigation -->
+  <nav class="flex text-xs text-gray-500 mb-6 font-medium">
+    <a href="/" class="hover:text-blue-800">Home</a>
+    <span class="mx-2">/</span>
+    <a href="/products" class="hover:text-blue-800">Products</a>
+    <span class="mx-2">/</span>
+    <a href={`/products/${product.category.toLowerCase().replace(/ /g, '-')}`} class="hover:text-blue-800">
+      {product.category}
+    </a>
+    <span class="mx-2">/</span>
+    <span class="text-gray-800 truncate font-semibold">{product.sku}</span>
+  </nav>
+
+  <!-- Primary Product Detail Overview -->
+  <div class="bg-white border border-gray-200 shadow-sm p-6 mb-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Product Image Preview -->
+      <div>
+        <div class="border border-gray-200 p-2 bg-gray-50 rounded-sm mb-3">
+          <img 
+            src={product.image} 
+            alt={product.title} 
+            class="w-full h-80 md:h-96 object-cover object-center bg-white"
+          />
+        </div>
+        <p class="text-xs text-gray-400 text-center italic">
+          * Housing color, beam angle, and input voltage fully customizable for B2B orders.
+        </p>
+      </div>
+
+      <!-- Product Meta Data & Quick Specs -->
+      <div class="flex flex-col justify-between">
+        <div>
+          <span class="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-1 rounded mb-3 uppercase tracking-wider">
+            {product.category}
+          </span>
+          <h1 class="text-xl md:text-2xl font-bold text-gray-900 leading-snug mb-2">
+            {product.title}
+          </h1>
+          <p class="text-xs text-gray-500 font-mono mb-6">
+            Model / SKU: <span class="font-bold text-gray-800">{product.sku}</span>
+          </p>
+
+          <!-- Key Parameters Box -->
+          <div class="bg-gray-50 border border-gray-200 p-4 rounded-sm mb-6">
+            <h3 class="font-bold text-xs text-gray-700 uppercase tracking-wider mb-3 border-b border-gray-200 pb-2">
+              Key Specifications
+            </h3>
+            <div class="grid grid-cols-2 gap-y-2 gap-x-4 text-xs">
+              {Object.entries(product.specs).map(([key, val]) => (
+                <div>
+                  <span class="text-gray-500 capitalize">{key.replace(/_/g, ' ')}:</span>
+                  <span class="font-bold text-gray-800 ml-1">{val}</span>
+                </div>
+              ))}
+              <div>
+                <span class="text-gray-500">Warranty:</span>
+                <span class="font-bold text-gray-800 ml-1">3–5 Years</span>
+              </div>
+              <div>
+                <span class="text-gray-500">Standards:</span>
+                <span class="font-bold text-gray-800 ml-1">CE / RoHS / ISO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action CTA Buttons -->
+        <div class="space-y-3 pt-4 border-t border-gray-100">
+          <a 
+            href={`/contact?sku=${encodeURIComponent(product.sku)}`} 
+            class="block w-full text-center bg-blue-800 hover:bg-blue-700 text-white font-bold py-3 text-sm transition-colors shadow-sm"
+          >
+            Inquire About This Product
+          </a>
+          <a 
+            href="/downloads" 
+            class="block w-full text-center bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2.5 text-xs border border-gray-300 transition-colors"
+          >
+            Download Photometric / IES Data Sheet ↓
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Technical Datasheet Table & Form -->
+  <div class="bg-white border border-gray-200 shadow-sm p-6 mb-8">
+    <div class="border-b border-gray-200 mb-6">
+      <span class="inline-block border-b-2 border-blue-800 pb-2 text-sm font-bold text-blue-800 uppercase tracking-wider">
+        Full Parameter Datasheet
+      </span>
+    </div>
+
+    <!-- Specifications Table -->
+    <table class="w-full text-left text-xs border-collapse mb-8">
+      <tbody>
+        <tr class="border-b border-gray-100 bg-gray-50">
+          <td class="p-3 font-bold text-gray-600 w-1/3">Model Number / SKU</td>
+          <td class="p-3 font-mono text-gray-900 font-bold">{product.sku}</td>
+        </tr>
+        <tr class="border-b border-gray-100">
+          <td class="p-3 font-bold text-gray-600">Product Line</td>
+          <td class="p-3 text-gray-900">{product.category}</td>
+        </tr>
+        {Object.entries(product.specs).map(([key, val], idx) => (
+          <tr class={`border-b border-gray-100 ${idx % 2 === 0 ? 'bg-gray-50' : ''}`}>
+            <td class="p-3 font-bold text-gray-600 capitalize">{key.replace(/_/g, ' ')}</td>
+            <td class="p-3 text-gray-900 font-semibold">{val}</td>
+          </tr>
+        ))}
+        <tr class="border-b border-gray-100 bg-gray-50">
+          <td class="p-3 font-bold text-gray-600">Light Source</td>
+          <td class="p-3 text-gray-900">High Lumen COB / SMD LED Chips</td>
+        </tr>
+        <tr class="border-b border-gray-100">
+          <td class="p-3 font-bold text-gray-600">Housing Material</td>
+          <td class="p-3 text-gray-900">Die-Cast Aluminum Heat Sink Housing</td>
+        </tr>
+        <tr class="border-b border-gray-100 bg-gray-50">
+          <td class="p-3 font-bold text-gray-600">Operating Temperature</td>
+          <td class="p-3 text-gray-900">-20°C to +50°C</td>
+        </tr>
+        <tr class="border-b border-gray-100">
+          <td class="p-3 font-bold text-gray-600">Applications</td>
+          <td class="p-3 text-gray-900">Commercial Buildings, Hotels, Retail Warehouses, Public Lighting Projects</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Netlify Form -->
+    <div class="bg-gray-50 border border-gray-200 p-6">
+      <h3 class="text-sm font-bold text-gray-800 mb-1">Direct Factory Inquiry</h3>
+      <p class="text-xs text-gray-500 mb-4">
+        Request wholesale pricing or engineering specs for SKU: <span class="font-bold text-gray-800">{product.sku}</span>.
+      </p>
+
+      <form class="space-y-4" name="product-detail-inquiry" method="POST" data-netlify="true">
+        <input type="hidden" name="requested_sku" value={product.sku} />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input 
+            type="text" 
+            name="name" 
+            placeholder="Your Name / Company" 
+            required 
+            class="w-full p-2.5 text-xs border border-gray-300 focus:outline-none focus:border-blue-800 bg-white"
+          />
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="Work Email" 
+            required 
+            class="w-full p-2.5 text-xs border border-gray-300 focus:outline-none focus:border-blue-800 bg-white"
+          />
+        </div>
+        <textarea 
+          name="message" 
+          rows="3" 
+          placeholder={`Please specify estimated project volume and custom specifications for model ${product.sku}...`}
+          required 
+          class="w-full p-2.5 text-xs border border-gray-300 focus:outline-none focus:border-blue-800 bg-white"
+        ></textarea>
+        <button 
+          type="submit" 
+          class="bg-blue-800 hover:bg-blue-700 text-white font-bold px-6 py-2.5 text-xs uppercase tracking-wider transition-colors"
+        >
+          Submit Specification Inquiry
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Related Products -->
+  {relatedProducts.length > 0 && (
+    <div class="bg-white border border-gray-200 shadow-sm p-6">
+      <h3 class="text-xs font-bold text-gray-800 uppercase tracking-wider border-b border-gray-200 pb-2 mb-4">
+        Related Items in {product.category}
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {relatedProducts.map((item) => {
+          const itemSkuSlug = item.sku.toLowerCase().replace(/[^a-z0-9-]/g, '-');
+          return (
+            <div class="border border-gray-200 p-3 hover:shadow-md transition-shadow bg-gray-50">
+              <a href={`/products/detail/${itemSkuSlug}`}>
+                <img src={item.image} alt={item.title} class="w-full h-32 object-cover mb-2 bg-white border" />
+              </a>
+              <p class="text-xs font-bold text-gray-800 line-clamp-1">{item.title}</p>
+              <p class="text-xs text-gray-500 mb-2">Model: {item.sku}</p>
+              <a 
+                href={`/products/detail/${itemSkuSlug}`}
+                class="block text-center text-xs bg-white border border-gray-300 text-blue-800 font-bold py-1.5 hover:bg-blue-800 hover:text-white transition-colors"
+              >
+                View Specifications
+              </a>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  )}
+</CatalogLayout>
